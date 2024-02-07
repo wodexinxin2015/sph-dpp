@@ -1,6 +1,6 @@
 /************************************************************************************
 SPH Data Post Viewer
---Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.
+--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.
 ************************************************************************************/
 
 # define _CRT_SECURE_NO_DEPRECATE

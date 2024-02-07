@@ -1,6 +1,6 @@
 /************************************************************************************
 SPH Data Post Viewer
---Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.
+--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.
 ************************************************************************************/
 #ifndef CLASS_FUNCTIONS_H_INCLUDED
 #define CLASS_FUNCTIONS_H_INCLUDED
@@ -40,7 +40,6 @@ private:
 	void Plot_SVG(Particle *, const Para_Pro , const Para_SVGPlot , char *);
 	void Plot_SVG_contour(Particle *, const Para_Pro , const Para_SVGPlot , char *, FILE *);
     void printf_start(FILE* fp, double dot_density, double max_x, double min_x);
-    void printf_end(FILE *);
 	void printf_boundary2d(FILE *, double [], double [], double, int [], double );
     void printf_boundary3dleft(FILE *, double [], double [], double, int [], double);
     void printf_boundary3dright(FILE *, double [], double [], double, int [], double);
@@ -48,6 +47,7 @@ private:
     void d3dleft_transformation(double *, double *);
     void d3dright_transformation(double *, double *);
     void colour_cal(double , double , double , int *, int );
+	void printf_end(FILE*);
 };
 class clTimeS_Fun {
 public:

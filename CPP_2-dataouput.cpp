@@ -1,6 +1,6 @@
 /************************************************************************************
 SPH Data Post Viewer
---Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.
+--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.
 ************************************************************************************/
 
 # define _CRT_SECURE_NO_WARNINGS
@@ -13,26 +13,22 @@ void statement_data(FILE *flog) {
 	/*program information*/
 	/*the version of program must be reflected in this function*/
 	printf("-------------------------------------------------------------------\n");
-	printf("SPH Data Post Viewer V1.10.0\n");
-	printf("--Copyright (c) 2018-2023 Weijie ZHANG, GeoHohai, Hohai University.\n");
+	printf("SPH Data Post Viewer V1.11.0\n");
+	printf("--Copyright (c) 2018-2024 Weijie ZHANG, GeoHohai, Hohai University.\n");
 	printf("-------------------------------------------------------------------\n");
-	printf("2021-07-17: v 1.6.6 add the file folder support of distance collection module\n");
-	printf("2021-09-23: v 1.7.1 add the selection of boundary particle in inp file\n");
-	printf("2022-05-09: v 1.8.1 add the continuous output of inp files from odb files\n");
-	printf("2022-06-05: v 1.9.1 revise the random field to inp file\n");
-	printf("2023-04-11: v 1.10.0 add the extraction module of surface data from the odb file\n");
-	printf("2023-04-11: v 1.10.0 add the area and volume calculations module\n");
+	printf("2022-05-09: v1.8.1 add the continuous output of inp files from odb files\n");
+	printf("2022-06-05: v1.9.1 revise the random field to inp file\n");
+	printf("2023-04-11: v1.10.0 add the extraction module of surface data from the odb file\n");
+	printf("2023-04-11: v1.10.0 add the area and volume calculations module\n");
 	printf("-------------------------------------------------------------------\n");
 	fprintf(flog, "-------------------------------------------------------------------\n");
-	fprintf(flog, "SPH Data Post Viewer V1.10.0\n");
-	fprintf(flog, "--Copyright (c) 2018-2023 Weijie ZHANG, GeoHohai, Hohai University.\n");
+	fprintf(flog, "SPH Data Post Viewer V1.11.0\n");
+	fprintf(flog, "--Copyright (c) 2018-2024 Weijie ZHANG, GeoHohai, Hohai University.\n");
 	fprintf(flog, "-------------------------------------------------------------------\n");
-	fprintf(flog, "2021-07-17: v 1.6.6 add the file folder support of distance collection module\n");
-	fprintf(flog, "2021-09-23: v 1.7.1 add the selection of boundary particle in inp file\n");
-	fprintf(flog, "2022-05-09: v 1.8.1 add the continuous output of inp files from odb files\n");
-	fprintf(flog, "2022-06-05: v 1.9.1 revise the random field to inp file\n");
-	fprintf(flog, "2023-04-11: v 1.10.0 add the extraction module of surface data from the odb file\n");
-	fprintf(flog, "2023-04-11: v 1.10.0 add the area and volume calculations module\n");
+	fprintf(flog, "2022-05-09: v1.8.1 add the continuous output of inp files from odb files\n");
+	fprintf(flog, "2022-06-05: v1.9.1 revise the random field to inp file\n");
+	fprintf(flog, "2023-04-11: v1.10.0 add the extraction module of surface data from the odb file\n");
+	fprintf(flog, "2023-04-11: v1.10.0 add the area and volume calculations module\n");
 	fprintf(flog, "-------------------------------------------------------------------\n");
 }
 

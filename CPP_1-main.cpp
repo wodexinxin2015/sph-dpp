@@ -1,14 +1,13 @@
 /************************************************************************************
 SPH Data Post Viewer
---Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.
+--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.
 ************************************************************************************/
 /************************************************************************************
 revision:
-2021-09-23: v 1.7.1 add the selection of boundary particle in inp file
-2022-05-09: v 1.8.1 add the continuous output of inp files from odb files
-2022-06-05: v 1.9.1 revise the random field to inp file
-2023-04-11: v 1.10.0 add the extraction module of surface data from the odb file
-2023-04-11: v 1.10.0 add the area and volume calculations module
+2022-05-09: v1.8.1 add the continuous output of inp files from odb files
+2022-06-05: v1.9.1 revise the random field to inp file
+2023-04-11: v1.10.0 add the extraction module of surface data from the odb file
+2023-04-11: v1.10.0 add the area and volume calculations module
 ************************************************************************************/
 
 #define _CRT_SECURE_NO_DEPRECATE
@@ -65,7 +64,7 @@ int main(int argc, char *argv[])
 			printf("Error 200: option is not -d.\n");
 			printf("-------------------------------------------------------------------\n");
 			printf("SPH Data Post Viewer\n");
-			printf("--Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.\n");
+			printf("--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.\n");
 			printf("-------------------------------------------------------------------\n");
 			printf("     Please using no arguments or following arguments.\n");
 			printf("-------------------------------------------------------------------\n");
@@ -84,7 +83,7 @@ int main(int argc, char *argv[])
 		printf("Error 100: Argument is not correct, Exit.\n");
 		printf("-------------------------------------------------------------------\n");
 		printf("SPH Data Post Viewer\n");
-		printf("--Copyright (c) 2018-2023, Weijie ZHANG, GeoHohai, Hohai University.\n");
+		printf("--Copyright (c) 2018-2024, Weijie ZHANG, GeoHohai, Hohai University.\n");
 		printf("-------------------------------------------------------------------\n");
 		printf("     Please using no arguments or following arguments.\n");
 		printf("-------------------------------------------------------------------\n");
