@@ -8,6 +8,7 @@ revision:
 2022-06-05: v1.9.1 revise the random field to inp file
 2023-04-11: v1.10.0 add the extraction module of surface data from the odb file
 2023-04-11: v1.10.0 add the area and volume calculations module
+2024-06-25: v1.12.0 add the input of file name in CPP_10-random_field_inpcpp.cpp
 ************************************************************************************/
 
 #define _CRT_SECURE_NO_DEPRECATE

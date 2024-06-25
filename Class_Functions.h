@@ -86,10 +86,10 @@ private:
 
 class clRandomField_Out {
 public:
-	int RandomField_Inp(Para_Pro pPPro, char* argv, FILE* flog);
+	int RandomField_Inp(Para_Pro pPPro, char* argv);
 private:
-	void read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv);
-	void write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv);
+	void read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv, char* fname);
+	void write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv, char* fname);
 };
 
 class clSurfaceData_Out {

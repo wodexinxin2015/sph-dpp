@@ -9,15 +9,21 @@ SPH Data Post Viewer
 # include "Class_Functions.h"
 # include "Header_Option.h"
 
-int clRandomField_Out::RandomField_Inp(Para_Pro pPPro, char* argv, FILE* flog) {
+int clRandomField_Out::RandomField_Inp(Para_Pro pPPro, char* argv) {
 	Para_Mat* pMat;
 	int i;
+	char f_name[12];
+
+	printf("-------------------------------------------------------------------------------------\n");
+	printf("Please input the file name of random parameters: less than 12 characters\n");
+	printf("-------------------------------------------------------------------------------------\n");
+	int err = scanf("%s", f_name);
 
 	//initialization of array
 	pMat = new Para_Mat[pPPro.ntotal];
 
 	//read material parameters
-	read_data_mat(pMat, pPPro, argv);
+	read_data_mat(pMat, pPPro, argv, f_name);
 
 	//particle number of each phase
 	for (i = 0; i < pPPro.ntotal; i++) {
@@ -29,14 +35,14 @@ int clRandomField_Out::RandomField_Inp(Para_Pro pPPro, char* argv, FILE* flog) {
 	}
 
 	//write data to inp files
-	write_data(pMat, pPPro, argv);
+	write_data(pMat, pPPro, argv, f_name);
 
 	//memory free
 	delete[]pMat;
 	return 0;
 }
 
-void clRandomField_Out::read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
+void clRandomField_Out::read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv, char* fname) {
 	char file_name[100];
 	FILE* finp;
 	int i;
@@ -46,8 +52,9 @@ void clRandomField_Out::read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv
 	//assemble file name
 	memset(file_name, 0, 100);
 	strcpy(file_name, argv);
-	if (win32) strcat(file_name, "\\Parameters");
-	else strcat(file_name, "/Parameters");
+	if (win32) strcat(file_name, "\\");
+	else strcat(file_name, "/");
+	strcat(file_name, fname);
 	strcat(file_name, ".txt");
 
 	//Open file
@@ -64,7 +71,7 @@ void clRandomField_Out::read_data_mat(Para_Mat* pMat, Para_Pro pPPro, char* argv
 	}
 }
 
-void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
+void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv, char* fname) {
 
 	char file_name[100];
 	int i, temp1[5];
@@ -72,12 +79,12 @@ void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
 	/*File name*/
 	FILE* fpw, * fps, * fpt, * fpa;
 
-	memset(file_name, 0, 100);
-
 	/*Open files*/
+	memset(file_name, 0, 100);
 	strcpy(file_name, argv);
-	if (win32) strcat(file_name, "\\Parameters");
-	else strcat(file_name, "/Parameters");
+	if (win32) strcat(file_name, "\\P-");
+	else strcat(file_name, "/P-");
+	strcat(file_name, fname);
 	strcat(file_name, ".inp");
 
 	fpt = fopen(file_name, "w");
@@ -92,8 +99,9 @@ void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
 	if (pPPro.nwater > 0) {  ///< liquid//
 		memset(file_name, 0, 100);
 		strcpy(file_name, argv);
-		if (win32) strcat(file_name, "\\Parameters-liquid");
-		else  strcat(file_name, "/Parameters-liquid");
+		if (win32) strcat(file_name, "\\L-");
+		else strcat(file_name, "/L-");
+		strcat(file_name, fname);
 		strcat(file_name, ".inp");
 		fpw = fopen(file_name, "w");
 		fprintf(fpw, "#%c\n", 1);
@@ -103,8 +111,9 @@ void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
 	if (pPPro.nsoil > 0) {   ///< solid//
 		memset(file_name, 0, 100);
 		strcpy(file_name, argv);
-		if (win32) strcat(file_name, "\\Parameters-solid");
-		else  strcat(file_name, "/Parameters-solid");
+		if (win32) strcat(file_name, "\\S-");
+		else strcat(file_name, "/S-");
+		strcat(file_name, fname);
 		strcat(file_name, ".inp");
 		fps = fopen(file_name, "w");
 		fprintf(fps, "#%c\n", 1);
@@ -114,8 +123,9 @@ void clRandomField_Out::write_data(Para_Mat* pMat, Para_Pro pPPro, char* argv) {
 	if (pPPro.nair > 0) {  ///< gas//
 		memset(file_name, 0, 100);
 		strcpy(file_name, argv);
-		if (win32) strcat(file_name, "\\Parameters-gas");
-		else  strcat(file_name, "/Parameters-gas");
+		if (win32) strcat(file_name, "\\G-");
+		else strcat(file_name, "/G-");
+		strcat(file_name, fname);
 		strcat(file_name, ".inp");
 		fpa = fopen(file_name, "w");
 		fprintf(fpa, "#%c\n", 1);
